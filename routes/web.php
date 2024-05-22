@@ -15,7 +15,7 @@ Route::get('/posts', function () {
 });
 
 Route::get('/posts/{post:slug}', function (Post $post) {
-
+    // Baris diatas menggunakan Route Model Binding. Jadi untuk menghubungkan route dengan model dapat dilakukan dengan menuliskan nama modelnya seperti diatas yaitu /post/{post} dan Post $post. slug ditambahkan karena query data ingin dilakukan berdasarkan slug dari url yang dikirimkan oleh view post.blade.php
     // $post = Post::find($slug);
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
