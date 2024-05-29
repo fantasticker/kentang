@@ -8,7 +8,7 @@
         </a>
         </h2>
         <div class="text-base text-gray-500">
-            <a href="#">{{ $post['author'] }} | {{ $post->created_at->diffForHumans() }}</a>
+            <a href="/authors/{{ $post->author->id }}" class="hover:underline">{{ $post->author->name }} | {{ $post->created_at->diffForHumans() }}</a>
         </div>
         <p class="mt-4 font-light">
             {{ Str::limit($post['body'], 150) }}
